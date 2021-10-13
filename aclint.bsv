@@ -208,6 +208,7 @@ module [Module] mkclint_apb#(parameter Integer base, Clock clint_clk, Reset clin
     Ifc_clint_axi4l#(aw, dw, uw, tick_count, msip_size, num_timecmp) clint <-
         dc2axi4l(clint_mod, base, clint_clk, clint_rst);
     return clint;
+    endmodule:mkclint_axi4l
     
  /*module [Module] mkclint_axi4#(Clock clint_clk, Reset clint_rst)
   (Ifc_clint_axi4#(iw, aw, dw, uw, tick_count, msip_size))
@@ -231,9 +232,5 @@ module [Module] mkclint_apb#(parameter Integer base, Clock clint_clk, Reset clin
         dc2axi4(clint_mod, clint_clk, clint_rst);
     return clint;
   endmodule:mkclint_axi4*/
-
-  endmodule:mkclint_axi4l
-  
-  
 
   endpackage:aclint
